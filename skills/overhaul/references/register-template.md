@@ -1,6 +1,6 @@
 # Living register — template
 
-Lives inside the session's plan file (e.g. `~/.claude/plans/<session>.md`), not a separate document. Update it the moment a finding arrives — never batch to the end of the session.
+Lives inside the session's plan file (e.g. `~/.claude/plans/<session>.md`), not a separate document.
 
 ## Intake log (issue register) — append as findings arrive
 
@@ -28,7 +28,6 @@ Running list of judgment calls the user made or approved during the session, dat
 - Intake agent (this session): receives findings page-by-page, updates this register, maps cross-cutting causes, dispatches legs.
 - Implementation: Opus (hard) / Sonnet (routine) subagents; integration branch `session/<name>` off main, worktree per parallel leg; single-owner files per leg (ownership table below).
 - Every leg ends in a **jedi-review** pass (lens count set by jedi-review's own stage 1 Scope) before merge; ledger to `LESSONS-DB.md`.
-- Skills in force: `5x-think` before any new mechanism; `grill-me` for ambiguous scope.
 
 ## Findings (explorer subagent reports)
 
@@ -41,16 +40,12 @@ One subsection per explored area, evidence-first — every claim carries a file:
 
 ## Waves
 
-A wave is the set of legs dispatched to run concurrently, always disjoint files. Cap: see `wave-batch-runbook.md`'s concurrency limit — that file is the one definition, this row doesn't restate it. A leg that would push the session total past the cap, or that collides on a file already owned in this wave, goes into the next wave instead — never squeezed in.
-
 | Wave | Legs (dispatched together) | Status |
 |---|---|---|
 | Wave A | Leg 1 (Sonnet), Leg 2 (Sonnet), Leg 3 (Opus) | running |
 | Wave B | Leg 4 (after Wave A — shares a file with Leg 2) | queued |
 
 ## Cross-leg file ownership
-
-Table built during stage 3, **before any leg in the wave starts**, so two concurrently running legs never write the same file:
 
 | File | Owning leg(s) |
 |---|---|
@@ -65,5 +60,3 @@ Group legs into deploy batches so the human can re-test live mid-session rather 
 
 - **Batch 1** — quick wins + any probes, so the next wave of findings arrives informed.
 - **Batch 2+** — the legs gated on batch 1's probe results, plus anything else ready.
-
-Ship a batch as soon as its own legs are jedi-review-gated; don't hold it for a slower parallel leg — that leg joins the next batch. The one exception: a leg sequenced behind an unmerged same-file leg always waits for its predecessor's merge, gated or not.
