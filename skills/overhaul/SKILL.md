@@ -11,7 +11,7 @@ A live test pass produces findings faster than anyone can fix them; the register
 
 **REQUIRED SUB-SKILL:** jedi-review for stage 5.
 
-The orchestrator running these 7 stages is a register keeper, dispatcher, and merge/deploy operator: the orchestrator dispatches; jedi-review's fix-author independence rule applies to attackers and skeptics — see `tribunal-mechanics.md`.
+The orchestrator running these 7 stages is a register keeper, dispatcher, and merge/deploy operator.
 
 ## The Contract — run 7 stages, looped per wave
 
@@ -60,7 +60,7 @@ The orchestrator running these 7 stages is a register keeper, dispatcher, and me
 - A **batch** is the set of jedi-review-gated legs merged into the integration branch together for one deploy.
 - Ship a batch as soon as its own legs are gated; don't hold it for a slower parallel leg — that leg joins the next batch.
 - Merge every gated leg into the integration branch. On every file two legs (or a leg and a moving `origin/main`) both touched, run the merge-collision lens (`references/merge-collision-lens.md`) before trusting the merge.
-- Run the full suite on the integration branch's final tip — never launch two gates against two different tips, and never gate a tip that is about to move. If `origin/main` moves again before the gate finishes, merge the new tip in, re-run the merge-collision lens on anything it touched, and gate the new tip instead — one gate, on the final tip, always.
+- Run the full suite on the integration branch's final tip — never gate a tip that is about to move. If `origin/main` moves again before the gate finishes, merge the new tip in, re-run the merge-collision lens on anything it touched, and gate the new tip instead — one gate, on the final tip, always.
 - A red suite blocks this deploy — no further legs merge into a red integration branch. It does not block other legs from continuing to build in their own worktrees. The fix for the red suite is itself a leg: diagnosed, fixed, jedi-reviewed, and merged before the gate re-runs; never patched directly on the integration branch.
 - Green gate → push/deploy, naming the human authorization it rests on (a standing session authorization such as "proceed with everything," or an explicit go for this specific deploy) — a green gate is a review verdict, not by itself a decision to ship.
 - If the push itself is refused (a pre-push hook or CI check failing) that refusal is its own gate, not yet green: diagnose and fix as its own leg, jedi-reviewed, then re-run the batch gate before pushing again — never bypass the hook.
@@ -73,7 +73,7 @@ The orchestrator running these 7 stages is a register keeper, dispatcher, and me
 
 ## Quality bar
 
-Six Sigma defect rate on what ships, held by the jedi-review gate, not a hope; full bar (click-speed, no mass deletion, delete-don't-shrink-false-claims): `references/quality-and-reporting.md`.
+Full bar (click-speed, no mass deletion, delete-don't-shrink-false-claims): `references/quality-and-reporting.md`.
 
 ## Red flags — stop and back up
 

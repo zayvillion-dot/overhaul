@@ -5,7 +5,6 @@ contract short. Nothing here is optional; it's just not inline.
 
 ## Quality bar
 
-- Six Sigma defect rate on what ships — the jedi-review gate at stage 5 is how that's held, not a hope.
 - Click-speed / time-to-complete, not just correctness: a fix that works but adds a tap or buries information isn't done.
 - Simplicity without losing information — condensing a finding or a stats block is not the same as deleting what someone still needs.
 - Scope = organization, testing, functionality, and fixes of existing code. **Never mass deletion** — an overhaul repairs a running system, it doesn't gut it.
@@ -29,6 +28,5 @@ See `SKILL.md`'s Red flags for the core list. These belong to the same "stop and
 
 - A guessed fix shipped for a symptom no explorer confirmed the cause of.
 - Findings sitting in chat history instead of the register because "I'll add them later."
-- Two gates launched against two different tips of the same integration branch.
 - A batch gate launched without checking for a foreign suite or an in-flight push first.
 - A merge across an auto-mergeable shared file with no merge-collision lens run against it.

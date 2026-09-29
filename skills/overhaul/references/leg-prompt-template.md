@@ -1,6 +1,6 @@
 # Leg dispatch prompt — template
 
-One dispatch per leg (stage 4). Copy this shape when briefing the Opus/Sonnet subagent that will execute it — it's the contract that keeps single-owner files and the no-push rule from being renegotiated mid-leg.
+One dispatch per leg (stage 4). Copy this shape when briefing the Opus/Sonnet subagent that will execute it.
 
 ```
 ## Leg <N> — <short name> (<Opus|Sonnet>, ~<estimate>)

@@ -22,7 +22,7 @@ Fix pattern: pull the gating predicate into one shared function all six call sit
 
 ## Adjudication
 
-This lens is a jedi-review lens, not a self-graded check: its findings go through jedi-review's own stage 3 (Adjudicate) — a fresh skeptic, never this lens, returns CONFIRMED or REFUTED — and its confirmed findings go to that project's `LESSONS-DB.md` per jedi-review's stage 6. Do not report a verdict here without that adjudication step.
+This lens is not a self-graded check: its findings go through jedi-review's own stage 3 (Adjudicate) — a fresh skeptic, never this lens, returns CONFIRMED or REFUTED — and its confirmed findings go to that project's `LESSONS-DB.md` per jedi-review's stage 6. Do not report a verdict here without that adjudication step.
 
 ## Report format
 

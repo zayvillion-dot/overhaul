@@ -17,7 +17,7 @@ Check all five before launching a full-suite run on the integration branch:
 - **No push in flight:** `pgrep -f "[g]it push origin main"` comes back empty.
 - **No foreign suite:** `pgrep -f <the project's suite entrypoint>` comes back empty — a second session's own test run can silently race or kill this one.
 
-If any check fails, resolve it — do not launch the gate speculatively "to see what happens." It never means pushing or resetting another session's work: **an unpushed local `main` you did not create is not yours to push or reset** — even when it fails the "in sync" check — wait for that session's own push, then merge `origin/main` in as usual.
+If any check fails, do not launch the gate speculatively "to see what happens." It never means pushing or resetting another session's work: **an unpushed local `main` you did not create is not yours to push or reset** — even when it fails the "in sync" check — wait for that session's own push, then merge `origin/main` in as usual.
 
 ## Deploy
 

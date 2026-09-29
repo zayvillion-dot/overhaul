@@ -7,7 +7,7 @@ Lives inside the session's plan file (e.g. `~/.claude/plans/<session>.md`), not 
 | # | Surface | Finding (user's words, condensed) | Sev | Status/leg |
 |---|---|---|---|---|
 | 1 | Invoice detail page | Delete button does nothing | P0 broken control | Leg 1 (Sonnet) |
-| 2 | Global mobile nav | Nav bar overlaps page content on phones | P1 layout | Leg 2 probe → Leg 4 fix |
+| 2 | Global mobile nav | Nav bar overlaps page content on phones | P1 layout | Leg 2 probe |
 | 3 | Settings page | Typo: "Pasword" | P3 cosmetic | Leg 1 (Sonnet) |
 | 4 | Settings page | Save button double-submits on slow connections | P1 UX/functionality friction | Leg 1 (Sonnet) — merged |
 
@@ -26,7 +26,7 @@ Running list of judgment calls the user made or approved during the session, dat
 ## Session process (boilerplate — paste once per session)
 
 - Intake agent (this session): receives findings page-by-page, updates this register, maps cross-cutting causes, dispatches legs.
-- Implementation: Opus (hard) / Sonnet (routine) subagents; integration branch `session/<name>` off main, worktree per parallel leg; single-owner files per leg (ownership table below).
+- Implementation: Opus (hard) / Sonnet (routine) subagents; integration branch `session/<name>` off main, worktree per leg; single-owner files per leg (ownership table below).
 - Every leg ends in a **jedi-review** pass (lens count set by jedi-review's own stage 1 Scope) before merge; ledger to `LESSONS-DB.md`.
 
 ## Findings (explorer subagent reports)
