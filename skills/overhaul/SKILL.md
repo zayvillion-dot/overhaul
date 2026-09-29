@@ -57,6 +57,7 @@ The orchestrator running these 7 stages is a register keeper, dispatcher, and me
 
 ### 6. Batch & deploy
 
+- Before the gate, run the pre-flight in `references/wave-batch-runbook.md`.
 - A **batch** is the set of jedi-review-gated legs merged into the integration branch together for one deploy.
 - Ship a batch as soon as its own legs are gated; don't hold it for a slower parallel leg — that leg joins the next batch.
 - Merge every gated leg into the integration branch. On every file two legs (or a leg and a moving `origin/main`) both touched, run the merge-collision lens (`references/merge-collision-lens.md`) before trusting the merge.
