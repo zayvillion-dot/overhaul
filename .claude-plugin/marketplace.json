@@ -1,0 +1,8 @@
+{
+  "name": "overhaul",
+  "description": "Marketplace for the overhaul skill",
+  "owner": { "name": "Isaiah Brooks" },
+  "plugins": [
+    { "name": "overhaul", "description": "Workflow for a live human test-pass: intake register, cross-cutting map, parallel worktree legs, a jedi-review gate per leg, and batched deploys", "version": "0.1.0", "source": "./", "author": { "name": "Isaiah Brooks" } }
+  ]
+}

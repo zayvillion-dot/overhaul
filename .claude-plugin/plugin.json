@@ -1,0 +1,10 @@
+{
+  "name": "overhaul",
+  "description": "Workflow for a live human test-pass: intake register, cross-cutting map, parallel worktree legs, a jedi-review gate per leg, and batched deploys.",
+  "version": "0.1.0",
+  "author": { "name": "Isaiah Brooks" },
+  "homepage": "https://github.com/zayvillion-dot/overhaul",
+  "repository": "https://github.com/zayvillion-dot/overhaul",
+  "license": "MIT",
+  "keywords": ["skills", "workflow", "git-worktrees", "code-review", "testing"]
+}
